@@ -33,6 +33,12 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+  void _incrementCounterBy10() {
+    setState(() {
+      _counter += 10;
+    });
+  }
+
   @override
   void initState() {
     super.initState();
@@ -56,11 +62,15 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             Text(
               '$_counter',
-              style: Theme
-                  .of(context)
-                  .textTheme
-                  .display1,
+              style: Theme.of(context).textTheme.display1,
             ),
+            RaisedButton(
+              child: Text("+10"),
+              onPressed: () {
+                print("heheda");
+                _incrementCounterBy10();
+              },
+            )
           ],
         ),
       ),
